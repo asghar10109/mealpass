@@ -35,14 +35,14 @@ const DefaultDashboard = ({ intl, match }) => {
       </Row>
       <Row>
         <Colxx lg="12" xl="6">
-          <IconCardsCarousel />
           <Row>
-            <Colxx md="12" className="mb-4">
+            <Colxx md="12" className="mb-4" style={{ paddingRight: '2px' }}>
               <SalesChartCard />
             </Colxx>
           </Row>
+          <IconCardsCarousel />
         </Colxx>
-        <Colxx lg="12" xl="6" className="mb-4">
+        <Colxx lg="12" xl="6" className="mb-4" style={{ paddingLeft: '2px' }}>
           <RecentOrders />
         </Colxx>
       </Row>
