@@ -2,13 +2,12 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Card, CardBody, CardTitle } from 'reactstrap';
 import ArcGISMap from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
-import esriConfig from '@arcgis/core/config';
+
+import IntlMessages from '../../helpers/IntlMessages';
 
 import '../../assets/css/map.css';
 
 const SalesChartCard = () => {
-  esriConfig.assetsPath = '/assets';
-
   const mapDiv = useRef(null);
 
   useEffect(() => {
@@ -79,20 +78,24 @@ const SalesChartCard = () => {
 
   return (
     <Card>
-      <button
-        className="position-absolute card-top-buttons header-icon btn btn-empty d-none d-sm-inline-block"
-        type="button"
-        id="fullScreenButton"
-        onClick={toggleFullScreen}
-      >
-        {isInFullScreen ? (
-          <i className="simple-icon-size-actual d-block" />
-        ) : (
-          <i className="simple-icon-size-fullscreen d-block" />
-        )}
-      </button>
+      <div className="position-absolute card-top-buttons">
+        <button
+          className="header-icon btn btn-empty d-none d-sm-inline-block"
+          type="button"
+          id="fullScreenButton"
+          onClick={toggleFullScreen}
+        >
+          {isInFullScreen ? (
+            <i className="simple-icon-size-actual d-block" />
+          ) : (
+            <i className="simple-icon-size-fullscreen d-block" />
+          )}
+        </button>
+      </div>
       <CardBody>
-        <CardTitle>Map</CardTitle>
+        <CardTitle>
+          <IntlMessages id="dashboards.map" />
+        </CardTitle>
         <div className="mapDiv" ref={mapDiv} />
       </CardBody>
     </Card>

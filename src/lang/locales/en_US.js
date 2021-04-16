@@ -154,6 +154,7 @@ module.exports = {
   'dashboards.refund-requests': 'Refund Requests',
   'dashboards.new-comments': 'New Comments',
   'dashboards.sales': 'Sales',
+  'dashboards.map': 'Map',
   'dashboards.orders': 'Orders',
   'dashboards.refunds': 'Refunds',
   'dashboards.recent-orders': 'Recent Orders',

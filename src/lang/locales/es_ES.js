@@ -154,6 +154,7 @@ module.exports = {
   'dashboards.refund-requests': 'Petición de Reembolso',
   'dashboards.new-comments': 'Nuevos Comentarios',
   'dashboards.sales': 'Ventas',
+  'dashboards.map': 'Mapa',
   'dashboards.orders': 'Pedidos',
   'dashboards.refunds': 'Reembolso',
   'dashboards.recent-orders': 'Pedidos Recientas',
