@@ -18,7 +18,7 @@ const BreadcrumbContainer = ({ heading, match }) => {
   return (
     <>
       {heading && (
-        <h1>
+        <h1 style={{ marginBottom: '0rem' }}>
           <IntlMessages id={heading} />
         </h1>
       )}

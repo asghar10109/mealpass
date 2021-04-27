@@ -155,6 +155,8 @@ module.exports = {
   'dashboards.new-comments': 'Nuevos Comentarios',
   'dashboards.sales': 'Ventas',
   'dashboards.map': 'Mapa',
+  'dashboards.esrimap': 'ESRI Mapa',
+  'dashboards.olmap': 'OpenLayers Mapa',
   'dashboards.orders': 'Pedidos',
   'dashboards.refunds': 'Reembolso',
   'dashboards.recent-orders': 'Pedidos Recientas',
