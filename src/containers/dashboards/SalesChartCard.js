@@ -1,42 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Card, CardBody, CardTitle } from 'reactstrap';
-import ArcGISMap from '@arcgis/core/Map';
-import MapView from '@arcgis/core/views/MapView';
 
 import IntlMessages from '../../helpers/IntlMessages';
 
-import '../../assets/css/map.css';
+import Map from '../../components/mapcomponent/map';
+import MyFeatureLayer from '../../components/mapcomponent/Layers/MyFeatureLayer';
 
 const SalesChartCard = () => {
-  const mapDiv = useRef(null);
-
-  useEffect(() => {
-    if (mapDiv.current) {
-      /**
-       * Initialize application
-       */
-      const map = new ArcGISMap({
-        basemap: 'gray-vector',
-      });
-
-      /* eslint-disable no-unused-vars */
-      const view = new MapView({
-        map,
-        container: mapDiv.current,
-        extent: {
-          spatialReference: {
-            wkid: 102100,
-          },
-          xmax: -13581772,
-          xmin: -13584170,
-          ymax: 4436367,
-          ymin: 4435053,
-        },
-      });
-      /* eslint-enable no-unused-vars */
-    }
-  }, []);
-
   const [isInFullScreen, setIsInFullScreen] = useState(false);
 
   const isInFullScreenFn = () => {
@@ -96,7 +66,9 @@ const SalesChartCard = () => {
         <CardTitle>
           <IntlMessages id="dashboards.map" />
         </CardTitle>
-        <div className="mapDiv" ref={mapDiv} />
+        <Map>
+          <MyFeatureLayer />
+        </Map>
       </CardBody>
     </Card>
   );
