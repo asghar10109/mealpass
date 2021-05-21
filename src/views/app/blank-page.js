@@ -1,8 +1,10 @@
 import React from 'react';
-import { Row } from 'reactstrap';
+import { Row, Card, CardBody, CardTitle } from 'reactstrap';
 import IntlMessages from '../../helpers/IntlMessages';
 import { Colxx, Separator } from '../../components/common/CustomBootstrap';
 import Breadcrumb from '../../containers/navs/Breadcrumb';
+import Map from '../../components/mapcomponent/map';
+import MyFeatureLayer from '../../components/mapcomponent/Layers/MyFeatureLayer';
 
 const BlankPage = ({ match }) => {
   return (
@@ -15,9 +17,16 @@ const BlankPage = ({ match }) => {
       </Row>
       <Row>
         <Colxx xxs="12" className="mb-4">
-          <p>
-            <IntlMessages id="menu.blank-page" />
-          </p>
+          <Card className="mb-4">
+            <CardBody>
+              <CardTitle>
+                <IntlMessages id="dashboards.map" />
+              </CardTitle>
+              <Map>
+                <MyFeatureLayer />
+              </Map>
+            </CardBody>
+          </Card>
         </Colxx>
       </Row>
     </>
